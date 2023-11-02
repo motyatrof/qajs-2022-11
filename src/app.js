@@ -40,3 +40,24 @@ export const getTotal = (items = [], discount = 0) => {
   }, 0);
   return total - (total * discount) / 100;
 };
+
+function getScore(scores) {
+  let totalScore = 0;
+
+  for (let key in scores) {
+    if (scores.hasOwnProperty(key)) {
+      totalScore += scores[key];
+    }
+  }
+
+  return totalScore;
+}
+
+const scores = {
+  Anna: 10,
+  Olga: 1,
+  Ivan: 5,
+};
+
+const total = getScore(scores);
+console.log(total);
